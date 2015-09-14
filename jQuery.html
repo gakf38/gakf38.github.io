@@ -1,0 +1,142 @@
+<!DOCTYPE html5>
+
+<html>
+
+<head>
+        <title> jQuery Exploration </title>
+        
+        <!-- jQuery & jQuery UI CDN --> 
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>        
+
+        <style>
+                /* Disables the Default Blue Outline */
+                *:focus {
+                        outline: none;
+                        -moz-box-shadow: none;
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                }
+
+                /* Set the width and center the jQuery Accordion Element */
+                #accordion {
+                        width: 600px;
+                        margin: 0px auto;
+                }
+
+                .title {
+                        font-weight: bold;
+                        text-align: left;
+                }
+
+                * {
+                        text-align: center;
+                }
+        </style>
+
+        <!-- jQuery UI Script -->
+        <script>
+
+        // Script Function for jQuery Animated Dialog Element
+        $(function() {
+                $("#dialog").dialog({
+                        width: 600,
+                        autoOpen: false,
+                        show: {
+ 								effect: "fadeIn",
+                                duration: 1000
+                        },
+                        hide: {
+                                effect: "fadeOut",
+                                duration: 1000
+                        }
+                });
+
+                // Script Function for jQuery Button Element to open Dialog Element     
+                $( "#opener" ).button().click(function() {
+                        $( "#dialog" ).dialog( "open" );
+                });
+
+                // Script Function for jQuery Accordion Element
+                $( "#accordion" ).accordion({
+                        collapsible: true,
+                        heightStyle: "content",
+                        active: false
+                });
+
+                // Script Function for jQuery Slider Element
+                $("#slider").slider();          
+        });
+
+        </script>
+
+</head>
+
+<body>
+
+        <h1> jQuery Exploration </h1>
+        <p> This is a more in depth exploration of the jQuery UI. </p>
+        <p> Being familar with bootstrap I was interested in exploring the other popular design API. </p>
+        <br/>
+
+        <h2> jQuery Button Element </h2>
+        <button id="opener">Button Element</button>
+        <br/>
+        <br/>
+        <br/>
+
+        <h2> jQuery Animated Dialog Element </h2>
+        <p> Clicking the above jQuery Button will open an example of the Animated Dialog Element. </p>
+        <div id = "dialog" title = "Example Dialog">
+        	<p> This is an example of jQuery's animated dialog element. </p>
+        </div>
+        <br/>
+
+        <h2> jQuery Accordion Element </h2>
+        <div id="accordion">
+                <h3> jQuery Slider Element</h3>
+                        <div>
+                                <p> This is an example of a jQuery Slider Element embedded within a jQuery Accordion Element. </p>
+                                <div id="slider"></div>
+                        </div>
+                <h3> Recap of Exploration </h3>
+                        <div>
+                                <p class="title"> Sources: </p>
+                                <p> jQuery UI Documentation: https://jqueryui.com/ </p>
+                                <p class="title"> Components Explored: </p>
+                                <p> Button: https://jqueryui.com/button/ </p>
+                                <p> Dialog: https://jqueryui.com/dialog/ </p>
+                                <p> Accordion: https://jqueryui.com/accordion/ </p>
+                                <p> Slider: https://jqueryui.com/slider/ </p>
+                                <p class="title"> Code: </p>
+                                <p> Location: </p>
+                                <p class="title"> Recap: </p>
+                                <p> Overall my exploration of jQuery went very well. I had very little experience with using jQuery or jQuery UI elements so I was able to
+                                    take some time and implement a few of the elements that are demoed on the jQuery UI website. Creating the HTML portion of the elements
+                                    fairly easy and straight forward but this exploration helped me gain a better understanding of jQuery functions and the syntax. I
+                                    decided to explore the jQuery UI button, dialog, accordion and slider element. I decided on the button element because it is a common
+                                    component of almost any website today. Creating the jQuery button is, initially, the same as creating a button in HTML. In order to apply
+                                    jQuery UI functionality/theming to the button just requires the declaring of a jQuery function using the buttons ID and the jQuery button
+                                    function. Creating a jQuery UI dialog was simply creating a div and giving it an id of dialog and creating a jQuery function for this div
+                                    with no internal functionality outside of its declaration. JQuery UI dialogs serve as a form of alerting the user so I added in the animated
+                                    capability to make it more practical. To do this I turned the autoOpen property to off within the jQuery function for the dialog and
+                                    then declared the properties "show" and "hide" with effects. The "show" and "hide" properties tell the dialog what to do when it is opened
+                                    or closed. Since the dialog now starts as closed, I had to create a functionality for activating the dialog. To do this I added the click
+                                    function to the button previously created and inside the click function I gave it the functionality to open the dialog. The accordion
+                                    is similar to the dialog element in the fact that it requires creating a div and giving it an ID of "accordion". However to create the tabs
+                                    of the accordion the div had to contain and header within to represent the tabs. By default an accordion element will have the first tab
+                                    opened, each tab will be the same size and the tabs could not be closed. So because of personal preference, within the jQuery function for
+                                    the accordion I changed the "collapsible" property to "true" which allowed for the ability to close the tabs of the accordion. By setting
+                                    the "heightStyle" property equal to "content" it tells the accordion to make the tabs size to the content it contains. Lastly, setting the
+                                    "active" property to false will have the accordion default to all its tabs being closed. I explored the slider element with the intention
+                                    of seeing if it was possible to add another jQuery UI element with the accordion rather than the intention of learning more about the
+                                    slider element. As it can be seen, adding the slider element within the accordion invovled the same process as adding in a jQuery element
+                                    outside of the accordion.
+                                </p>
+                        </div>
+        </div>
+        <br/>
+</body>
+
+</html>
