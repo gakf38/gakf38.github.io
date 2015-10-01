@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>JavaScript Exploration</title>
+	
+	<style>
+		
+		#display {
+			margin: 0 auto;
+			width: 600px;
+			height: 465px;
+			border: 1px solid black;
+		}
+		
+		h1 {
+			margin-top: 10px;
+		}
+		
+		* {
+			text-align: center;
+		}
+		
+	</style>	
+	
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<script>
+	
+		var explain = "</br></br>Clicking each button will display different JavaScript functionality.</br>Each of the examlpes will be displayed with in this box.";
+
+		function explanation() 
+		{
+			document.getElementById("display").innerHTML = explain;
+		};
+	
+		function exampleOne() 
+		{
+			$("#display").load("exampleOne.html");
+		};
+		
+		function exampleTwo() 
+		{
+			$("#display").load("exampleTwo.html");
+		};
+		
+		function exampleThree() 
+		{
+			$("#display").load("exampleThree.html");
+		};
+	
+	</script>
+
+</head>
+
+<body>
+	<h1>JavaScript Exploration</h1>
+	
+	<button onclick="exampleOne()">Calculator</button>
+	<button onclick="exampleTwo()">Gallery</button>
+	<button onclick="exampleThree()">Example 3</button>
+	
+	</br>
+	</br>
+	
+	<button onclick ="explanation()">Instructions</button>
+	
+	</br>
+	</br>
+	
+	<div id="display">
+		</br>
+		</br>
+		Click "Instructions" to start
+	</div>
+	
+</body>
+
+</html>
