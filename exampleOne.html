@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<script>
+			
+		var userInput = document.getElementById("userInput");
+		var input1 = -1;
+		var input2 = -1;
+		var calculator = 'none';
+			
+		function append(newValue) 
+		{
+			if(userInput.value.length < 7)
+			{
+				userInput.value += newValue;
+			}
+		};
+		
+		function erase()
+		{
+			userInput.value = '';
+			input1 = -1;
+			input2 = -1;
+			calculator = 'none'
+		};
+		
+		
+		function calcIt(newValue)
+		{
+			calculator = newValue;
+			if(input1 == -1)
+			{
+				input1 = parseInt(userInput.value);
+				userInput.value = '';
+			}
+		};
+		
+		function equals() 
+		{
+			if(input2 == -1 && userInput.value.length > 0)
+			{
+				input2 = parseInt(userInput.value);
+				
+				if(calculator == 'add')
+				{
+					userInput.value = (input1 + input2).toString();
+				}
+				else if (calculator == 'sub')
+				{
+					userInput.value = (input1 - input2).toString();
+				}
+				else if (calculator == 'mult')
+				{
+					userInput.value = (input1 * input2).toString();
+				}
+				else if (calculator == 'div')
+				{
+					userInput.value = (input1 / input2).toString();
+				}
+				
+				input1 = -1;
+				input2 = -1;
+			}
+		};
+		
+		
+	</script>
+	
+	<style>
+	
+		#userInput {
+			width: 160px;
+			height: 30px;
+			border: 2px solid black;
+			margin: 1px;
+		}
+		
+		#buttonContainer {
+			width: 168px;
+			margin: 0 auto;
+		}
+	
+		#steps {
+			text-align: left;
+			margin-left: 60px;
+		}
+	
+		#stepContainer {
+			width: 500px;
+			margin: 0 auto;
+		}
+			
+		.calc {
+			border: 1px solid black;
+			width: 40px;
+			height: 40px;
+			margin: 1px;
+		}
+
+	</style>
+	
+</head>
+
+<body>
+
+	<h1> Calculator </h1>
+	<h3> Be sure to clear after every calculation. </h3>
+	
+	<div id="buttonContainer">
+		<input type="text" id="userInput">
+		</br>
+		<button onclick="append(9)" class="calc"> 9 </button><button onclick="append(8)" class="calc"> 8 </button><button onclick="append(7)" class="calc"> 7 </button><button onclick="calcIt('div')" class="calc"> / </button>
+		</br>
+		<button onclick="append(6)" class="calc"> 6 </button><button onclick="append(5)" class="calc"> 5 </button><button onclick="append(4)" class="calc"> 4 </button><button onclick="calcIt('mult')" class="calc"> x </button>
+		</br>
+		<button onclick="append(3)" class="calc"> 3 </button><button onclick="append(2)" class="calc"> 2 </button><button onclick="append(1)" class="calc"> 1 </button><button onclick="calcIt('sub')" class="calc"> - </button>
+		</br>
+		<button onclick="erase()" class="calc"> C </button><button onclick="append(0)" class="calc"> 0 </button><button onclick="equals()" class="calc"> = </button><button onclick="calcIt('add')" class="calc"> + </button>
+	</div>
+	
+	<div id="stepContainer">
+		<p>This calculator does not currently handle all errors. It is assumed that users will follow these steps while using the calculator.</p>
+		<p id="steps">1. Input an initial value using the digit pad<br>2. Select one of the four mathematical functions<br>3. Input a second value<br>4. Press the equals button to display results of desired calculation</p>
+	</div>
+		
+</body>
+
+</html>
