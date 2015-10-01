@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<script>
+	
+		var frame = document.getElementById("photo");
+	
+		var URLs = ["http://extras.mnginteractive.com/live/media/site36/2015/0830/20150830__Jake-Arrieta~p1.jpg",
+					"http://www4.pictures.zimbio.com/gi/Anthony+Rizzo+St+Louis+Cardinals+v+Chicago+M3rzUA4CCHdl.jpg",
+					"http://www.gannett-cdn.com/-mm-/eb5ad7d86faeb306a1327c5f4cc674a432fbefcc/c=0-16-4173-3154&r=x513&c=680x510/local/-/media/2015/07/28/USATODAY/USATODAY/635736437672417706-USATSI-8721342.jpg",
+					"http://www.concordmonitor.com/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=kE7PKKTUd7QCbn6$Ga1cW8$daE2N3K4ZzOUsqbU5sYsrECVKm2QotyshgK9FLy94WCsjLu883Ygn4B49Lvm9bPe2QeMKQdVeZmXF$9l$4uCZ8QDXhaHEp3rvzXRJFdy0KqPHLoMevcTLo3h8xh70Y6N_U_CryOsw6FTOdKL_jpQ-&CONTENTTYPE=image/jpeg",
+					"http://wrigleyville.locals.baseballprospectus.com/wp-content/uploads/sites/2/2015/04/Lester-Jon-1511-Mitchell.jpg"]
+		
+		var currentURL = 0;
+		
+		function next() {
+			currentURL++;
+			if(currentURL == 5)
+			{
+				currentURL = 0;
+			}
+			frame.src = URLs[currentURL];
+		};
+		
+		function back() {
+			currentURL--;
+			if(currentURL == -1)
+			{
+				currentURL = 4;
+			}
+			frame.src = URLs[currentURL];
+		};
+	
+	</script>
+
+
+	<style>
+		
+		#buttonDock button {
+			width: 25px;
+			height: 25px;
+		}
+		
+		#photoDock {
+			margin: 0 auto;
+			width: 350px;
+			height: 325px;
+			border: 5px ridge gold;
+		}
+		
+		img {
+			width: 350px;
+			height: 325px;
+		}
+			
+	</style>
+
+</head>
+
+<body>
+
+	<h1> Photo Gallery </h1>
+	
+	<div id="buttonDock">
+		<button onclick="back()"> < </button>
+		<button onclick="next()"> > </button>
+	</div>
+	</br>
+	<div id="photoDock">
+		<img id="photo" src="http://extras.mnginteractive.com/live/media/site36/2015/0830/20150830__Jake-Arrieta~p1.jpg" alt="Jake Arrieta">
+	</div>
+
+</body>
+
+</html>
