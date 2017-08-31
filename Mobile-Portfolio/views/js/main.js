@@ -497,10 +497,17 @@ function updatePositions() {
   /* Garrett's change: Moved Scroll Top calculation outside of for loop to prevent sync. layout */
   var scrollTop = document.body.scrollTop;
 
+  /* Garrett's change: Calculating the 5 potential values once */
+  var phase = [];
+
+  for (var i = 0; i < 5; i++)
+  {
+    phase.push((Math.sin((scrollTop / 1250) + (i % 5))));
+  }
+
   for (var i = 0; i < items.length; i++) {
     /* Garrett's change: Modified to use pre-calculated scrollTop */
-    var phase = Math.sin((scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * phase[i%5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
