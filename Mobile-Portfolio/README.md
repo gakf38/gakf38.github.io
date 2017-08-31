@@ -11,3 +11,8 @@
 * Used `querySelectorAll` to pull all `randomPizzaContainers` at once and not within the for loop of `changePizzaSizes`
 * Moved `scrollTop` outside of for loop in `updatePosition` function to avoid synchronous layout
 * Modified calculation in for loop of `updatePosition` to use precalculated `scrollTop` value
+
+### Steps to run
+1. Download complete resource
+2. Open index.html
+3. See all the optimizations :)
