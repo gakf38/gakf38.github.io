@@ -527,7 +527,10 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  /* Garrett's change: Using Inner Height, cols and s values to determine number of pizzas needed */
+  var innerHeight = window.innerHeight;
+  var pizzaCount = ((innerHeight % s) * cols);
+  for (var i = 0; i < (pizzaCount); i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
