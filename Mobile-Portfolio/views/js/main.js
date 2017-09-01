@@ -500,9 +500,9 @@ function updatePositions() {
   /* Garrett's change: Calculating the 5 potential values once */
   var phase = [];
 
-  for (var i = 0; i < 5; i++)
+  for (var j = 0; j < 5; j++)
   {
-    phase.push((Math.sin((scrollTop / 1250) + (i % 5))));
+    phase.push((Math.sin((scrollTop / 1250) + (j % 5))));
   }
 
   for (var i = 0; i < items.length; i++) {
