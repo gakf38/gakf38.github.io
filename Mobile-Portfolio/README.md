@@ -4,7 +4,7 @@
 * Added a `print` media tag to the `print.css` link
 * Added `async` tag to the Google Analytics scripts
 * Moved the the `perfsmatter.js` link to the end of the body
-* Optimized all the images
+* Optimized all the images, including a resized pizzeria image (pizzeria-100.jpg)
 
 ### Changes to main.js
 * Changed `switch` statement in `changePizzaSizes` function to calculate newWidth in percentages instead of pixels
